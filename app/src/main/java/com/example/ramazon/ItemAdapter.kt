@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ItemAdapter(private val WishlistItems: ArrayList<WishlistItem>) :RecyclerView.Adapter<ItemAdapter.ViewHolder>(){
+class ItemAdapter(private val wishlistItem: WishlistItem) :RecyclerView.Adapter<ItemAdapter.ViewHolder>(){
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         val itemNameView: TextView
@@ -30,8 +30,6 @@ class ItemAdapter(private val WishlistItems: ArrayList<WishlistItem>) :RecyclerV
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val wishlistItem = WishlistItems[position]
-
         holder.itemNameView.text = wishlistItem.itemName
         holder.priceView.text = wishlistItem.itemPrice.toString()
         holder.linkView.text = wishlistItem.itemLink
